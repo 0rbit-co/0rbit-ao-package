@@ -25,12 +25,12 @@
 
 ### Directly from Source
 
-Copy `src/_0rbit.lua` file and paste it into your directory named as `_0rbit.lua`.
+Copy `src/main.lua` file and paste it into your directory named as `_0rbit.lua`.
 
 ### Import Module
     
 ```lua
-    local _0rbit = require("_0rbit")
+local _0rbit = require("_0rbit")
 ```
 
 ## Usage
@@ -38,19 +38,19 @@ Copy `src/_0rbit.lua` file and paste it into your directory named as `_0rbit.lua
 ### Creating a GET Request
 
 ```lua
-    _0rbit.sendGetRequest(GET_URL)
+_0rbit.sendGetRequest(GET_URL)
 ```
 
 ### Creating a POST Request
 
 ```lua
-    _0rbit.sendPostRequest(POST_URL, POST_BODY)
+_0rbit.sendPostRequest(POST_URL, POST_BODY)
 ```
 
 ### Checking $0RBT Balance 
 
 ```lua
-    _0rbit.getBalance()
+_0rbit.getBalance()
 ```
 
 ## Example
