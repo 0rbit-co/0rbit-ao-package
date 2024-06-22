@@ -1,7 +1,7 @@
 --[[
     name: _0rbit
     description: Package to build with 0rbit to Access ANY Real World Data in your AO process.
-    dev: @0rbitco
+    dev: @megabyte0x
 ]]
 
 local _0rbit = {
