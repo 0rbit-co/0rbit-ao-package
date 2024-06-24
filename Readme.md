@@ -6,6 +6,7 @@
 
 - **GET Request**: Make a HTTP GET request to any valid URL.
 - **POST Request**: Make a HTTP POST request to any valid URL.
+- **Receive Response**: Receive the response of the request made.
 - **Balance**: Get the balance of **0RBT POINTS** of your processId.
 
 ## Installation
@@ -20,17 +21,17 @@
 2. Install the `0rbit` package.
 
     ```bash
-    APM.install("_0rbit")
+    APM.install("0rbit")
     ```
 
 ### Directly from Source
 
-Copy `src/main.lua` file and paste it into your directory named as `_0rbit.lua`.
+Copy `src/main.lua` file and paste it into your directory named as `0rbit.lua`.
 
 ### Import Module
     
 ```lua
-local _0rbit = require("_0rbit")
+local _0rbit = require("0rbit")
 ```
 
 ## Usage
@@ -40,18 +41,30 @@ local _0rbit = require("_0rbit")
 ```lua
 _0rbit.sendGetRequest(GET_URL)
 ```
+- `GET_URL`: The URL to make a GET request.
 
 ### Creating a POST Request
 
 ```lua
 _0rbit.sendPostRequest(POST_URL, POST_BODY)
 ```
+- `POST_URL`: The URL to make a POST request.
+- `POST_BODY`: The body to be sent in POST request.
+
+### Receiving Response and Executing a function
+    
+```lua
+_0rbit.receiveResponse(msg, onResponse)
+```
+- `msg`: The message to be received.
+- `onResponse` (optional): The function to be executed on response. If not provided, it will execute an empty function.
 
 ### Checking $0RBT Balance 
 
 ```lua
-_0rbit.getBalance()
+_0rbit.getBalance(address)
 ```
+- `address` (optional): The address of the processId. If not provided, it will take the process Id of the current process.
 
 ## Example
 

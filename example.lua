@@ -1,4 +1,4 @@
-_0rbit = require("_0rbit")
+_0rbit = require("src.main")
 local json = require("json")
 
 -- The URL to send the GET request to
@@ -25,11 +25,20 @@ BODY = json.encode({
 });
 
 --[[
+    Example function to be called when the response is received.
+    @msg: The response message
+]]
+function onResponse(msg)
+    print("Response: " .. json.encode(msg))
+end
+
+--[[
     Example Handler for sending a GET request.
+    @GET_URL: The URL to send the GET request to
 ]]
 Handlers.add(
     "TestGetRequest",
-    Handlers.utils.hasMatchingTag("Action", "Testing-Get-Request"),
+    Handlers.utils.hasMatchingTag("Action", "Test-Get-Request"),
     function()
         _0rbit.sendGetRequest(GET_URL)
     end
@@ -38,17 +47,34 @@ Handlers.add(
 
 --[[
     Example Handler for sending a POST request.
+    @BASE_URL: The URL to send the POST request to
+    @BODY: The data body to be sent in the POST request
 ]]
 Handlers.add(
     "Test-Post-Request",
-    Handlers.utils.hasMatchingTag("Action", "Testing-Post-Request"),
+    Handlers.utils.hasMatchingTag("Action", "Test-Post-Request"),
     function()
         _0rbit.sendPostRequest(BASE_URL, BODY)
     end
 )
 
 --[[
+    Example Handler for receiving a response.
+    @msg: The response message
+    @onResponse (optional): The function to be called when the response is received
+]]
+
+Handlers.add(
+    "Receive-Response",
+    Handlers.utils.hasMatchingTag("Action", "Receive-Response"),
+    function(msg)
+        _0rbit.receiveResponse(msg, onResponse)
+    end
+)
+
+--[[
     Example Handler for getting the balance of the current processId.
+    @recepient (optional): The processId to get the balance of. If not passed, then the balance of the current processId is returned.
 ]]
 Handlers.add(
     "Get-Balance",

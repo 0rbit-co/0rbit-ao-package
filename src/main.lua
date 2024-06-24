@@ -37,8 +37,17 @@ function _0rbit.sendPostRequest(url, body)
     })
 end
 
-function _0rbit.getBalance()
-    Send({ Target = _0rbit._0RBT_TOKEN, Tags = { Action = "Balance" } })
+function _0rbit.receiveResponse(msg, onResponse)
+    local responseId = msg.RequestId;
+    onResponse = onResponse or function() end
+    print("Response received for RequestId " .. responseId)
+    onResponse(msg)
+end
+
+function _0rbit.getBalance(recepient)
+    recepient = recepient or ao.id
+
+    Send({ Target = _0rbit._0RBT_TOKEN, Recipient = recepient, Tags = { Action = "Balance" } })
 end
 
 return _0rbit
