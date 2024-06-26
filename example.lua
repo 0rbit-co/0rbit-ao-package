@@ -1,4 +1,4 @@
-_0rbit = require("src.main")
+_0rbit = require("@megabyte/0rbit")
 local json = require("json")
 
 -- The URL to send the GET request to
