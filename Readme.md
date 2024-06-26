@@ -21,13 +21,13 @@
 2. Install the `0rbit` package.
 
     ```bash
-    APM.install("@megabyte/0rbit")
+    APM.install("0rbit")
     ```
 
 ### Import Module
     
 ```lua
-_0rbit = require("@megabyte/0rbit")
+_0rbit = require("0rbit")
 ```
 
 ### Directly from Source
