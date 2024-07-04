@@ -1,14 +1,14 @@
-_0rbit = require("0rbit")
+_0rbit = require("src.main")
 local json = require("json")
 
 -- The URL to send the GET request to
 GET_URL = "https://0rbit.co"
 
 -- The URL to send the POST request to
-BASE_URL = "https://g8way.0rbit.co/graphql"
+POST_URL = "https://g8way.0rbit.co/graphql"
 
 -- The data body to be sent in the POST request
-BODY = json.encode({
+POST_BODY = json.encode({
     query = [[
                             query {
                                 transactions(
@@ -54,7 +54,7 @@ Handlers.add(
     "Test-Post-Request",
     Handlers.utils.hasMatchingTag("Action", "Test-Post-Request"),
     function()
-        _0rbit.sendPostRequest(BASE_URL, BODY)
+        _0rbit.sendPostRequest(POST_URL, POST_BODY)
     end
 )
 

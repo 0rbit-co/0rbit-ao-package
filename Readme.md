@@ -46,10 +46,11 @@ _0rbit.sendGetRequest(GET_URL)
 ### Creating a POST Request
 
 ```lua
-_0rbit.sendPostRequest(POST_URL, POST_BODY)
+_0rbit.sendPostRequest(POST_URL, POST_BODY, POST_HEADERS)
 ```
 - `POST_URL`: The URL to make a POST request.
-- `POST_BODY`: The body to be sent in POST request.
+- `POST_BODY` (optional): The body to be sent in POST request.
+- `POST_HEADERS` (optional): The headers to be sent in POST request.
 
 ### Receiving Response and Executing a function
     

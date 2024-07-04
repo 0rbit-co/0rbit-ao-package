@@ -23,8 +23,10 @@ function _0rbit.sendGetRequest(url)
     })
 end
 
-function _0rbit.sendPostRequest(url, body)
+function _0rbit.sendPostRequest(url, body, headers)
     local fee_amount = "1000000000000" -- 1 $0RBT
+    headers = headers or nil
+    body = body or nil
 
     Send({
         Target = _0rbit._0RBT_TOKEN,
@@ -33,7 +35,8 @@ function _0rbit.sendPostRequest(url, body)
         Quantity = fee_amount,
         ["X-Action"] = "Post-Real-Data",
         ["X-Url"] = url,
-        ["X-Body"] = body
+        ["X-Body"] = body,
+        ["X-Headers"] = headers
     })
 end
 
